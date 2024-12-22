@@ -71,25 +71,25 @@
 
     <!-- Game navigation -->
     <nav id="game_nav" class="flex">
-        <a href="#home">
+        <a href="index.html#home">
             <figure>
                 <img src="./assets/icons/pixel_puppy_white.png" alt="Play" class="invert_alt">
                 <figcaption>Home</figcaption>
             </figure>
         </a>
-        <a href="#daily-tasks">
+        <a href="daily_tasks.html">
             <figure>
                 <img src="./assets/icons/tasks.png" alt="Daily Tasks" class="invert_alt">
                 <figcaption>Daily Tasks</figcaption>
             </figure>
         </a>
-        <a href="#wallet">
+        <a href="wallet.html">
             <figure>
                 <img src="./assets/icons/wallet.png" alt="Wallet" class="invert_alt">
                 <figcaption>Wallet</figcaption>
             </figure>
         </a>
-        <a href="#leaderboard">
+        <a href="leaderboard.html">
             <figure>
                 <img src="./assets/icons/leaderboard.png" alt="Leaderboard" class="invert_alt">
                 <figcaption>Leaderboard</figcaption>
@@ -107,44 +107,6 @@
                 <img src="https://i.postimg.cc/90DHWgLN/logo2.png" id="main_puppy" alt="$Paw" role="button" tabindex="0" draggable="false" onclick="tapPuppy()">
                 <p id="tap_count">Taps: <span id="tap_total">0</span></p>
             </div>
-        </section>
-
-        <!-- Daily Tasks Section -->
-        <section id="daily-tasks">
-            <div class="dialog">
-                <div class="dialog-header">Daily Tasks</div>
-                <div class="reward-balance">$Paw: <span id="reward-balance">0</span></div>
-                <div class="task" id="task-yt-sub">
-                    <img src="./assets/youtube.png" alt="YouTube">
-                    <span>Subscribe Puppy Tap</span>
-                    <button onclick="startTask('task-yt-sub', 'https://www.youtube.com/@PuppyTapOnBase')">Start</button>
-                </div>
-                <div class="task" id="task-telegram">
-                    <img src="./assets/telegram.png" alt="Telegram">
-                    <span>Puppy on Base </span>
-                    <button onclick="startTask('task-telegram', 'https://t.me/PuppyTapAnnouncements')">Start</button>
-                </div>
-                <div class="task" id="task-twitter">
-                    <img src="./assets/twitter.png" alt="Twitter">
-                    <span>Twitter Follow</span>
-                    <button onclick="startTask('task-twitter', 'https://x.com/Puppy_On_Base')">Start</button>
-                </div>
-                <button id="claim-reward" disabled onclick="claimReward()">Claimed 2000 $Paw</button>
-            </div>
-        </section>
-
-        <!-- Wallet Section -->
-        <section id="wallet">
-            <h2>Wallet</h2>
-            <p>Import your wallet or generate a new one for the Base Chain.</p>
-            <button onclick="importWallet()">Import Wallet</button>
-            <button onclick="generateWallet()">Generate New Wallet</button>
-        </section>
-
-        <!-- Leaderboard Section -->
-        <section id="leaderboard">
-            <h2>Leaderboard</h2>
-            <div id="leaderboard"></div>
         </section>
     </main>
 
