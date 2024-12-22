@@ -769,314 +769,61 @@
             </div>
 
             <!-- Achievements Panel -->
-            <div id="achievements-panel" class="panel remove unremove">
-                <h1>Achievements</h1>
-                
-                <!-- Filter dropdown -->
-                <select name="achievement_filter" id="achievement_filter" class="panel_select">
-                    <option value="all">
-                        All (Default)
-                    </option>
-                    <option value="unlocked">
-                        Unlocked
-                    </option>
-                    <option value="locked">
-                        Locked
-                    </option>
-                    <option value="challenge">
-                        Challenge Achievements
-                    </option>
-                    <option value="secret">
-                        Secret Achievements
-                    </option>
-                </select>
-
-                <!-- <p>Achievements will go here (when they've been implemented)</p><br> -->
-                <p class="secondary_text">
-                    Progress: <span id="achievement_progress">-/- (0%)</span>
-                    <span tabindex="0" class="question_mark" title="Secret (or hidden) achievements are not required to reach 100%" onclick="toast(...toasts.info_achieve_percent)">?</span>
-                </p><br>
-                <label for="compact_achievements">
-                    <input type="checkbox" id="compact_achievements" onclick="setting('compact_achievements')" data-option> Compact mode
-                </label>
-                <label for="achievements_grid">
-                    <input type="checkbox" id="achievements_grid" onclick="setting('achievements_grid')" data-option> Grid view
-                </label><br><br>
-                
-                <div id="achievements_list">
-                    <!-- Old achievement notification -->
-                    <!-- <div class="info-item">
-                        <img src="./assets/puppy Clicker.png" alt="$Paw" class="achievement-img">
-                        <div>
-                        <h1>Achievement earned: Click the $Paw</h1>
-                        <p>Click the $Paw</p>
-                        </div>
-                    </div>-->
-                </div>
-            </div>
+            <!-- <div id="achievements-panel" class="panel remove unremove"> -->
+                <!-- <h1>Achievements</h1> -->
+                <!-- ... existing code ... -->
+            <!-- </div> -->
 
             <!-- Statistics Panel -->
-            <div id="stats-panel" class="panel remove">
-                <div id="info-inner">
-                    <h1>Statistics</h1>
-                    <i class="secondary_text">View your numbers</i><br/><br/>
-
-                    <!-- Statistics -->
-                    <div id="statistics">
-                        <!-- Prestige -->
-                        <div id="this_prestige_stats" class='remove'>
-                            <h3>This prestige:</h3>
-                            <details class="stat_collapse">
-                                <summary><img src="./assets/stats/puppy.png" alt="" class="stats_icon button_icon"> $Paw earned: <b id="prestige_puppys">---</b></summary>
-                                <p>From clicking: <b id="prestige_puppys_clicked">---</b></p>
-                                <p>From CPS: <b id="prestige_puppys_idled">---</b></p>
-                                <p>From falling $Paw: <b id="prestige_puppys_bonus">---</b></p>
-                            </details>
-                            <p><img src="./assets/stats/pointer.png" alt="" class="stats_icon button_icon"> Total Clicks: <b id="prestige_clicks">---</b></p>
-                            <details class="stat_collapse">
-                                <summary><img src="./assets/tools/tool_0.png" alt="" class="stats_icon button_icon"> Tools crafted: <b id="prestige_hoes_crafted_total">---</b><br/></summary>
-                                <p>Hoe:        <b id="prestige_hoes_crafted_0">---</b></p>
-                                <p>Sturdy Hoe: <b id="prestige_hoes_crafted_1">---</b></p>
-                                <p>Scythe:     <b id="prestige_hoes_crafted_2">---</b></p>
-                                <p>Plough:     <b id="prestige_hoes_crafted_3">---</b></p>
-                                <p>Dual Sickle:<b id="prestige_hoes_crafted_4">---</b></p>
-                                <p>Gilded Hoe: <b id="prestige_hoes_crafted_5">---</b></p>
-                            </details>
-                            <p>Falling $Paw grabbed: <b id="prestige_falling_puppys_grabbed">---</b></p>
-                            <p>Boosts used: <b id="prestige_boosts_used">---</b></p>
-                        </div>
-
-                        <!-- Lifetime -->
-                        <h3>Lifetime:</h3>
-                        <p>Time played: <b id="stat_time_played">---</b></p><br/>
-
-                        <details class="stat_collapse">
-                            <summary><img src="./assets/stats/puppy.png" alt="" class="stats_icon button_icon"> $Paw earned: <b id="lifetime_puppys">---</b></summary>
-                            <p>From clicking: <b id="lifetime_puppys_clicked">---</b></p>
-                            <p>From CPS: <b id="lifetime_puppys_idled">---</b></p>
-                            <p>From falling $Paw: <b id="lifetime_puppys_bonus">---</b></p>
-                        </details>
-                        <p><img src="./assets/stats/pointer.png" alt="" class="stats_icon button_icon"> Total Clicks: <b id="lifetime_clicks">---</b></p>
-                        <details class="stat_collapse">
-                            <summary>Tools crafted: <b id="lifetime_hoes_crafted_total">---</b><br/></summary>
-                            <p>Hoe:        <b id="lifetime_hoes_crafted_0">---</b></p>
-                            <p>Sturdy Hoe: <b id="lifetime_hoes_crafted_1">---</b></p>
-                            <p>Scythe:     <b id="lifetime_hoes_crafted_2">---</b></p>
-                            <p>Plough:     <b id="lifetime_hoes_crafted_3">---</b></p>
-                            <p>Dual Sickle: <b id="lifetime_hoes_crafted_4">---</b></p>
-                            <p>Gilded Hoe:     <b id="lifetime_hoes_crafted_5">---</b></p>
-                        </details>
-                        <p>Falling $Paw grabbed: <b id="lifetime_falling_puppys_grabbed">---</b></p>
-                        <p>Boosts used: <b id="lifetime_boosts_used">---</b></p><br/>
-
-                        <p>Prestiges: <b id="lifetime_prestige">---</b></p>
-                        <p><img src="./assets/stats/golden_puppy.png" alt="" class="stats_icon button_icon"> Golden $Paw earned: <b id="lifetime_golden_puppys">---</b></p>
-                        <p><img src="./assets/stats/golden_puppy_spent.png" alt="" class="stats_icon button_icon"> Golden $Paw spent: <b id="lifetime_golden_puppys_spent">---</b></p>
-                        <p>Coins earned: <b id="lifetime_cash">---</b></p>
-                        <p>Coins spent: <b id="lifetime_cash_spent">---</b></p><br>
-
-                        <p>Clicks per second (Best): <b id="lifetime_clickspeedrecord">---</b></p><br/>
-
-                        <p>Themes: <b id="stat_themes">---</b></p>
-                        <p>Cosmetics: <b id="stat_cosmetics">---</b> <span tabindex="0" class="question_mark" title="This does not include default cosmetics. Secret cosmetics are not required to reach 100%. A more detailed breakdown is in the cosmetics menu." onclick="toast(...toasts.info_cosmetic_percent)">?</span></p> 
-                        <p class="jared_related">Trinkets: <b id="stat_trinkets">---</b></p>
-                        <br/>
-
-                        <p>Achievements: <b id="stat_achievements">---</b></p>
-                    </div>
-                </div> 
-            </div>
+            <!-- <div id="stats-panel" class="panel remove"> -->
+                <!-- <h1>Statistics</h1> -->
+                <!-- ... existing code ... -->
+            <!-- </div> -->
 
             <!-- Settings Panel -->
-            <div id="settings-panel" class="panel remove">
-                <h1>Settings</h1>
-                <p class="secondary_text"><i>Customize Puppy Clicker</i></p><br>
-                <!-- <p class="secondary_text"><i>Optionally opt into or optimize options</i></p><br> -->
+            <!-- <div id="settings-panel" class="panel remove"> -->
+                <!-- <h1>Settings</h1> -->
+                <!-- ... existing code ... -->
+            <!-- </div> -->
 
-                <!-- Developer -->
-                <div id="devp"></div>
-
-                <!-- Options -->
-                <div id="options_container">
-                    <!-- Customization -->
-                    <section>
-                        <h6>Customization</h6>
-                        <label for="theme_button">
-                            <div class="option" id="theme_button" onclick="themeSwitcher()" role="button" tabindex="0">
-                                <img src="./assets/icons/palette.svg" alt="" class="button_icon invert">
-                                Themes
-                                <img src="./assets/icons/right_arrow.svg" alt="" class="button_icon invert ra">
-                            </div>
-                        </label>
-                        <label for="cosmetic_button">
-                            <div class="option cosmetic_related" id="cosmetic_button" onclick="cosmeticSwitcher()" role="button" tabindex="0">
-                                <img src="./assets/icons/padlock.svg" alt="" class="button_icon invert cosmetic_padlock">
-                                <img src="./assets/icons/cosmetic.svg" alt="" class="button_icon invert">
-                                Cosmetics
-                                <img src="./assets/icons/right_arrow.svg" alt="" class="button_icon invert ra">
-                            </div>
-                        </label>
-                        <label for="cosmetic_auto_equip">
-                            <div class="option">
-                                <img src="./assets/icons/cosmetic_gear.png" alt="" class="button_icon invert">
-                                Auto-equip new cosmetics
-                                <input type="checkbox" id="cosmetic_auto_equip" onclick="setting('cosmetic_auto_equip')" data-option>
-                            </div>
-                        </label>
-                        <label for="FunTipPercentage">
-                            <div class="option">
-                                <img src="./assets/blank.png" alt="" class="button_icon invert">
-                                Percentage of fun tips<br/>
-                                <div class="flex">
-                                    <input type="range" min="0" max="100" value="50" class="slider" id="FunTipsSlider" data-option-slider="fun_tip_percentage">
-                                    <input type="number" name="fun_tip_percentage_label" id="FunTipsSliderLabel" class="discreet" min="0" max="100" data-option-slider="fun_tip_percentage">
-                                </div>
-                            </div>
-                        </label>
-                    </section>
-
-                    <!-- Gameplay -->
-                    <section>
-                        <h6>Gameplay</h6>
-                        <label for="edit_keybinds">
-                            <div class="option" id="edit_keybinds" onclick="keybindsMenu()" role="button" tabindex="0">
-                                <img src="./assets/icons/keyboard.svg" alt="" class="button_icon bright_200">
-                                Keybinds
-                                <img src="./assets/icons/right_arrow.svg" alt="" class="button_icon invert ra">
-                            </div>
-                        </label>
-                        <label for="enable_keybinds">
-                            <div class="option">
-                                <img src="./assets/blank.png" alt="" class="button_icon invert">
-                                Enable keybinds
-                                <input type="checkbox" id="enable_keybinds" onclick="setting('enable_keybinds')" data-option checked>
-                            </div>
-                        </label>
-
-                        <label for="tutorial_messages">
-                            <div class="option">
-                                <img src="./assets/icons/info.svg" alt="" class="button_icon invert">
-                                Tutorial messages
-                                <input type="checkbox" id="tutorial_messages" onclick="setting('tutorial_messages')" data-option checked>
-                            </div>
-                        </label>
-                        <label for="carl_shop_toasts">
-                            <div class="option">
-                                <img src="./assets/blank.png" alt="" class="button_icon invert">
-                                Carl shop notifications
-                                <input type="checkbox" id="carl_shop_toasts" checked onclick="setting('carl_shop_toasts')" data-option>
-                            </div>
-                        </label>
-                        <label for="autosave_interval">
-                            <div class="option">
-                                <img src="./assets/icons/floppy.svg" alt="" class="button_icon invert">
-                                Autosave Frequency (seconds)
-                                <p class="secondary_text">Game will also save when closed in supported browsers</p>
-                                <div class="flex">
-                                    <input type="range" id="autosave_interval" min="1" max="60" value="5" class="slider" data-option-slider="autosave_interval">
-                                    <input type="number" id="autosave_interval_label" min="1" max="60" value="5" class="discreet" data-option-slider="autosave_interval"/>
-                                </div>
-                            </div>
-                        </label>
-                    </section>
-
-                    <!-- Interface -->
-                    <section>
-                        <h6>Interface</h6>
-                        <label for="show_nav">
-                            <div class="option">
-                                <img src="./assets/blank.png" alt="" class="button_icon invert">
-                                Mobile nav bar
-                                <input type="checkbox" id="show_nav" onclick="setting('show_nav')" data-option>
-                            </div>
-                        </label>
-                        <label for="full_numbers">
-                            <div class="option">
-                                <img src="./assets/blank.png" alt="" class="button_icon invert">
-                                Full numbers
-                                <input type="checkbox" id="full_numbers" onclick="setting('full_numbers')" data-option>
-                            </div>
-                        </label>
-                        <label for="enableMainProgress">
-                            <div class="option">
-                                <img src="./assets/blank.png" alt="" class="button_icon invert">
-                                Always-on-top progress bar
-                                <input type="checkbox" id="enableMainProgress" onclick="settingMainProgress()" data-option/>
-                            </div>
-                        </label>
-                        <label for="confetti_effects">
-                            <div class="option">
-                                <img src="./assets/blank.png" alt="" class="button_icon invert">
-                                Confetti effects
-                                <input type="checkbox" id="confetti_effects" onclick="setting('confetti_effects')" data-option>
-                            </div>
-                        </label>
-                        <label for="notificationLength">
-                            <div class="option">
-                                <img src="./assets/stats/clock.png" alt="" class="button_icon">
-                                Notification Length
-                                <p class="secondary_text">Time (in seconds) that notifications will stay on your screen</p>
-                                <div class="flex">
-                                    <input type="range" id="notificationLength" min="2" max="15" value="6" class="slider" data-option-slider="notificationLength">
-                                    <input type="number" id="notificationLength_label" min="2" max="15" value="6" class="discreet" data-option-slider="notificationLength"/>
-                                </div>
-                            </div>
-                        </label>
-                    </section>
-
-                    <!-- Sounds options -->
-                    <section>
-                        <h6>Audio</h6>
-                        <label for="enableSounds">
-                            <div class="option">
-                                <img src="./assets/blank.png" alt="" class="button_icon invert">
-                                Sounds
-                                <input type="checkbox" id="enableSounds" onclick="settingSounds()" data-option>
-                            </div>
-                        </label>
-                        <label for="enableMusic">
-                            <div class="option">
-                                <img src="./assets/blank.png" alt="" class="button_icon invert">
-                                Beta music
-                                <input type="checkbox" id="enableMusic" onclick="settingMusic()" data-option>
-                            </div>
-                        </label>
-                        <label for="enablepuppySounds">
-                            <div class="option">
-                                <img src="./assets/blank.png" alt="" class="button_icon invert">
-                                Beta Puppy sounds
-                                <input type="checkbox" id="enablepuppySounds" onclick="settingpuppySounds()" data-option>
-                            </div>
-                        </label>
-                        <label for="volume_master">
-                            <div class="option">
-                                <img src="./assets/icons/volume.svg" alt="" class="button_icon invert" id="volume_master_img">
-                                Volume
-                                <div class="flex">
-                                    <input type="range" min="0" max="100" value="0" class="slider" id="volume_master">
-                                    <input type="number" name="volume_master_percent" id="volume_master_percent" class="discreet" min="0" max="100" value="0">
-                                </div>
-                            </div>
-                        </label>
-                    </section>
-                    
-                    <!-- Danger Zone -->
-                    <section>
-                        <h6>Danger Zone</h6>
-                        <div class="flex">
-                            <!-- Delete save -->
-                            <button class="button_red full_width" onClick="openDialog(...dialog.clearsave)" style="margin-right: 6px;">
-                                Delete Save Data
-                            </button>
-                            <!-- Reset settings -->
-                            <button onClick="openDialog(...dialog.settings_reset)" class="full_width">
-                                Reset Settings
-                            </button>
-                        </div>
-
-                    </section>
+            <!-- Daily Tasks Section -->
+            <div class="dialog">
+                <div class="dialog-header">Daily Tasks</div>
+                <div class="reward-balance">$Paw: <span id="reward-balance">0</span></div>
+                <div class="task" id="task-yt-sub">
+                    <img src="./assets/youtube.png" alt="YouTube">
+                    <span>Subscribe Puppy Tap</span>
+                    <button onclick="startTask('task-yt-sub', 'https://www.youtube.com/@PuppyTapOnBase')">Start</button>
                 </div>
+                <div class="task" id="task-telegram">
+                    <img src="./assets/telegram.png" alt="Telegram">
+                    <span>Puppy on Base </span>
+                    <button onclick="startTask('task-telegram', 'https://t.me/PuppyTapAnnouncements')">Start</button>
+                </div>
+                <div class="task" id="task-twitter">
+                    <img src="./assets/twitter.png" alt="Twitter">
+                    <span>Twitter Follow</span>
+                    <button onclick="startTask('task-twitter', 'https://x.com/Puppy_On_Base')">Start</button>
+                </div>
+                <button id="claim-reward" disabled onclick="claimReward()">Claimed 2000 $Paw</button>
             </div>
+
+            <!-- Wallet Section for Base Chain -->
+            <div id="wallet_section">
+                <h2>Wallet</h2>
+                <p>Import your wallet or generate a new one for the Base Chain.</p>
+                <button onclick="importWallet()">Import Wallet</button>
+                <button onclick="generateWallet()">Generate New Wallet</button>
+            </div>
+
+            <!-- Leaderboard Section -->
+            <div id="leaderboard_section">
+                <h2>Leaderboard</h2>
+                <div id="leaderboard"></div>
+            </div>
+
+            <!-- Data.json file -->
+            <!-- Ensure to create a data.json file to keep track of the point system -->
 
             <!-- Footer -->
             <footer>
