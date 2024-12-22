@@ -32,6 +32,24 @@
     <script src="styling.js" defer></script>
     <script src="user.js" defer></script>
 
+    <!-- Telegram Login Script -->
+    <script>
+        // Check if the user is coming from Telegram
+        if (window.Telegram && window.Telegram.WebApp) {
+            const user = window.Telegram.WebApp.initDataUnsafe.user;
+            if (user) {
+                // Automatically log in the user
+                autoLogin(user);
+            }
+        }
+
+        function autoLogin(user) {
+            // Implement your login logic here
+            console.log("User logged in:", user);
+            // You can save user data to your backend or local storage
+        }
+    </script>
+
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NTHCZFXKB8"></script>
 <script>
