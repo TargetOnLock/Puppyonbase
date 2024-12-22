@@ -861,7 +861,7 @@ body:not(.theme_light) .theme_checkmark { filter: invert(); }
     -webkit-touch-callout: none;
     animation: falling_puppy 2.5s ease-in forwards;
 }
-@keyframes falling_puppy { to {transform: translateY(790px)} }
+@keyframes falling_puppy { to {transform: translateY(790px)} } }
 .falling_puppy.mirror:not(.falling_boost) {
     animation: falling_puppy_mirror 2.5s ease-in forwards;
     filter: drop-shadow(-8px 8px 4px rgba(0, 0, 0, 0.5)) !important;
@@ -2692,7 +2692,10 @@ footer .user_card { text-decoration: none !important; }
 
 .tap-area {
     position: relative;
-    display: inline-block;
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    margin-top: 20px; /* Add some space above */
 }
 
 .tap-count {
@@ -2703,6 +2706,8 @@ footer .user_card { text-decoration: none !important; }
 .puppy-image {
     cursor: pointer;
     transition: transform 0.1s; /* Smooth transition for scaling */
+    width: 120px; /* Increase the width of the image */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .tap-animation {
