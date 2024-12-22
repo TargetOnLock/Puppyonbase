@@ -7,10 +7,56 @@
     <title>Leaderboard</title>
     <link rel="stylesheet" type="text/css" href="puppy_clicker.css">
     <link rel="stylesheet" type="text/css" href="themes.css">
+    <style>
+        /* Additional styles for the leaderboard page */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: var(--bg); /* Use your existing background color */
+            color: var(--text); /* Use your existing text color */
+        }
+
+        #leaderboard {
+            text-align: center;
+            background-color: var(--bg-lighter); /* Light background for the leaderboard section */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 600px; /* Limit the width for better appearance */
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .leaderboard-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .leaderboard-table th, .leaderboard-table td {
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .leaderboard-table th {
+            background-color: var(--bg-darker);
+            color: var(--text);
+        }
+
+        .leaderboard-table tr:nth-child(even) {
+            background-color: var(--bg-lighter);
+        }
+    </style>
 </head>
 <body>
-     <!-- Game navigation -->
-     <nav id="game_nav" class="flex">
+    <!-- Game navigation -->
+    <nav id="game_nav" class="flex">
         <a href="index.html#home">
             <figure>
                 <img src="./assets/home.png" alt="Play" class="invert_alt">
@@ -40,7 +86,34 @@
     <!-- Leaderboard Section -->
     <section id="leaderboard">
         <h2>Leaderboard</h2>
-        <div id="leaderboard"></div>
+        <table class="leaderboard-table">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Username</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody id="leaderboard-data">
+                <!-- Dynamic leaderboard data will be inserted here -->
+                <tr>
+                    <td>1</td>
+                    <td>User1</td>
+                    <td>1000</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>User2</td>
+                    <td>800</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>User3</td>
+                    <td>600</td>
+                </tr>
+                <!-- Add more users dynamically -->
+            </tbody>
+        </table>
     </section>
 </body>
 </html>
