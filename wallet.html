@@ -7,10 +7,57 @@
     <title>Wallet</title>
     <link rel="stylesheet" type="text/css" href="puppy_clicker.css">
     <link rel="stylesheet" type="text/css" href="themes.css">
+    <style>
+        /* Additional styles for the wallet page */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: var(--bg); /* Use your existing background color */
+            color: var(--text); /* Use your existing text color */
+        }
+
+        #wallet {
+            text-align: center;
+            background-color: var(--bg-lighter); /* Light background for the wallet section */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 400px; /* Limit the width for better appearance */
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 2px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-     <!-- Game navigation -->
-     <nav id="game_nav" class="flex">
+    <!-- Game navigation -->
+    <nav id="game_nav" class="flex">
         <a href="index.html#home">
             <figure>
                 <img src="./assets/home.png" alt="Play" class="invert_alt">
@@ -39,10 +86,35 @@
 
     <!-- Wallet Section -->
     <section id="wallet">
-        <h2>Wallet</h2>
-        <p>Import your wallet or generate a new one for the Base Chain.</p>
+        <h2>Wallet Registration</h2>
+        <p>Register your wallet address for airdrops and rewards.</p>
+        <input type="text" id="walletAddress" placeholder="Enter your wallet address" />
+        <button onclick="registerWallet()">Register Wallet</button>
         <button onclick="importWallet()">Import Wallet</button>
         <button onclick="generateWallet()">Generate New Wallet</button>
     </section>
+
+    <script>
+        function registerWallet() {
+            const walletAddress = document.getElementById('walletAddress').value;
+            if (walletAddress) {
+                // Implement your wallet registration logic here
+                console.log("Wallet registered:", walletAddress);
+                alert("Wallet registered successfully!");
+            } else {
+                alert("Please enter a valid wallet address.");
+            }
+        }
+
+        function importWallet() {
+            // Implement your import wallet logic here
+            console.log("Importing wallet...");
+        }
+
+        function generateWallet() {
+            // Implement your generate wallet logic here
+            console.log("Generating new wallet...");
+        }
+    </script>
 </body>
 </html>
