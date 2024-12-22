@@ -100,12 +100,11 @@
     <!-- Main content area -->
     <main id="main">
         <!-- Home Section -->
-        <section id="home">
+        <section id="home" style="text-align: center;">
             <!-- Tapping functionality -->
-            <div id="tap_area">
-                <h1>Puppy Tap On Base Chain</h1>
-                <img src="https://i.postimg.cc/90DHWgLN/logo2.png" id="main_puppy" alt="$Paw" role="button" tabindex="0" draggable="false" onclick="tapPuppy()">
-                <p id="tap_count">Taps: <span id="tap_total">0</span></p>
+            <div id="tap_area" class="tap-area">
+                <p id="tap_count" class="tap-count">Taps: <span id="tap_total">0</span></p>
+                <img src="https://i.postimg.cc/90DHWgLN/logo2.png" id="main_puppy" alt="$Paw" role="button" tabindex="0" draggable="false" onclick="tapPuppy()" class="puppy-image">
             </div>
         </section>
     </main>
@@ -117,7 +116,13 @@
         function tapPuppy() {
             tapCount++;
             document.getElementById('tap_total').innerText = tapCount;
-            // Additional logic for earning $Paw can be added here
+
+            // Animation for clicking
+            const puppyImage = document.getElementById('main_puppy');
+            puppyImage.classList.add('tap-animation'); // Add animation class
+            setTimeout(() => {
+                puppyImage.classList.remove('tap-animation'); // Remove animation class
+            }, 100); // Duration of the scale effect
         }
     </script>
 
